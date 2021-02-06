@@ -1,0 +1,14 @@
+{
+  "name" : "Camera Allower",
+  "version" : "0.1",
+  "description" : "Allow camera and microphone.",
+  "permissions": [ "contentSettings", "tabs" ],
+  "browser_action": {
+     "default_icon": "icon-idle.png",
+     "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "manifest_version": 2
+}
