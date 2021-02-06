@@ -1,4 +1,5 @@
-const PATTERN_URL = 'https://*.webrtc.org';
+const MY_DOMEN = 'webrtc.org';
+const PATTERN_URL = 'https://*.' + MY_DOMEN + '/*';
 
 document.addEventListener('DOMContentLoaded', function () {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var types = ['microphone', 'camera'];
     types.forEach(function(type) {
       chrome.contentSettings[type] && chrome.contentSettings[type].get({
-            primaryUrl: PATTERN_URL + '/*',
+            primaryUrl: PATTERN_URL,
             incognito: incognito
           },
           function(details) {
